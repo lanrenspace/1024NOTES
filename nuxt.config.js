@@ -1,4 +1,9 @@
 export default {
+  mode: 'universal',
+  env: {
+    BASE_URL: process.env.BASE_URL,
+    NODE_ENV: process.env.NODE_ENV
+  },
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
@@ -38,10 +43,12 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    "@nuxtjs/proxy"
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: [/^element-ui/],
-  }
+    vendor: ["axios"]
+  },
 }

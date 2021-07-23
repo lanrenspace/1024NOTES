@@ -3,5 +3,13 @@
 </template>
 
 <script>
-export default {}
+import { getAllLabels} from "../api/labels";
+
+export default {
+  created() {
+    getAllLabels().then(response => {
+      console.log(response)
+    })
+  }
+}
 </script>
